@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React ,{useState} from "react";
+import Ninjas from "./Ninjas";
 
 function App() {
+  const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [sh,setSh]=useState(false)
+
+    const show=()=>{
+      setSh(true)
+      console.log(name,email);
+    }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>my first react app</h1>
+      <p>welcome</p>
+      <Ninjas setName={setName} setEmail={setEmail} show={show} name={name} email={email} sh={sh} />
+     
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+// Did you ever hear the tragedy of Ken Kaneki the eyepatch? I thought not. It's not a story the CCG would tell you. It's a ghoul legend
